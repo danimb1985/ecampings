@@ -1,0 +1,42 @@
+body {
+	margin: 0;
+}
+
+#menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul li {
+	display: inline-block;
+	padding: 0;
+	margin: 0 0 0 1.25%;
+	width: 15.4%;
+}
+
+#menu ul li:FIRST-OF-TYPE {
+	margin: 0;
+	width: 50%;
+}
+
+#menu ul li img {
+	width: 100%;
+}
+#search{
+	margin-bottom: 15px;
+}
+#search input {
+	vertical-align: middle;
+}
+
+#address {
+	height: 30px;
+	border: 2px solid #ffcc00;
+	padding: 0 7px;
+	width: 67%;
+}
+#search_address, #search_location {
+	width: 12.3%;
+	margin: 0 0 0 1.4%;
+}
