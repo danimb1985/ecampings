@@ -23,9 +23,11 @@ body {
 #menu ul li img {
 	width: 100%;
 }
-#search{
+
+#search {
 	margin-bottom: 15px;
 }
+
 #search input {
 	vertical-align: middle;
 }
@@ -36,7 +38,20 @@ body {
 	padding: 0 7px;
 	width: 67%;
 }
-#search_address, #search_location {
+
+#search_address,#search_location {
 	width: 12.3%;
 	margin: 0 0 0 1.4%;
+}
+
+.icon {
+	background: #555;
+	width: 30px;
+	height: 26px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.blue {
+	background: #3875D7;
 }

@@ -1,5 +1,5 @@
 var map;
-var hostweb = 'http://ecampings.hl169.dinaserver.com/';
+var hostweb = 'http://ecampings.d228.dinaserver.com/';
 var idTabla = document.getElementById("listaregistros");
 
 var directionsService;
@@ -19,7 +19,7 @@ function initialize() {
 	});
 	myLocation = new google.maps.LatLng(43.367426685403, -8.4069229453665);
 	var mapOptions = {
-		zoom : 5,
+		zoom : 7,
 		mapTypeId : google.maps.MapTypeId.ROADMAP,
 		center : myLocation
 	};
@@ -62,11 +62,11 @@ function buscaGas(ciudad, radio) {
 						var latlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
 						try {
 							var distance = google.maps.geometry.spherical.computeDistanceBetween(centro, latlng);
+							aKeys[distance] = i;
+							aOrden[i] = distance;
 						} catch (err) {
-							var distance = 100;
+
 						}
-						aKeys[distance] = i;
-						aOrden[i] = distance;
 					}
 
 					aOrden.sort(function(a, b) {
@@ -84,11 +84,22 @@ function buscaGas(ciudad, radio) {
 						var localidad = markers[i].getAttribute("localidad");
 						var direccion = markers[i].getAttribute("direcc");
 						var url = markers[i].getAttribute("url");
+						var id = markers[i].getAttribute("id");
+						var adaptado_discapacitado = markers[i].getAttribute("adaptado_discapacitado");
 						var latlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
 						var distance = aOrden[j];
 						marker = createMarker(url, denominacion, latlng, cp, direccion, localidad, distance);
-						row = addNewRow(j, url, denominacion, cp, direccion, localidad, distance);
+						row = addNewRow(j, url, denominacion, cp, direccion, localidad, distance, id, adaptado_discapacitado);
 					}
+					$("[id^=camping_]").click(function() {
+						var id = $(this).attr("id").substring(8);
+						$.post(hostweb + "ajax.php", {
+							fun : "getCamping",
+							param : new Array("es", id)
+						}, function(data) {
+							$("#camping_data").html(data["html"]);
+						}, "json");
+					});
 
 				});
 
@@ -124,7 +135,7 @@ function DrawCircle(metros, center) {
 }
 
 /* Encargada de crear la tabla con el listado de registros */
-function addNewRow(i, url, denominacion, cp, direccion, localidad, distance) {
+function addNewRow(i, url, denominacion, cp, direccion, localidad, distance, id, adaptado_discapacitado) {
 	var TABLE = idTabla;
 	var newRow = TABLE.insertRow(-1);
 	// newRow.setAttribute("onclick","openMarker("+i+");return false");
@@ -139,7 +150,7 @@ function addNewRow(i, url, denominacion, cp, direccion, localidad, distance) {
 
 	var newCell = newRow.insertCell(newRow.cells.length);
 	newCell.setAttribute("style", "min-width:95px;");
-	newCell.innerHTML = "<a href=" + url + " onclick=\"document.location.href=this.href;\"> ver >> </a>";
+	newCell.innerHTML = "<a href='#camping' style='color:blue;cursor:pointer;' id='camping_" + id + "'> ver >> </a>";
 
 }
 

@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="./css/jquery.mobile-1.2.0.min.css" />
 <script type="text/javascript" src="./js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="./js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="./js/db.js"></script>
 <script type="text/javascript" src="./js/main.js"></script>
 <link rel="stylesheet" href="css/style.css" />
 <script type="text/javascript"
@@ -40,7 +41,8 @@
                 </ul>
             </nav>
         </header>
-		<div id="listadoPanel" class="men_registros_provincia">
+		<div data-role="content" id="listadoPanel"
+			class="men_registros_provincia">
 			<table id="listaregistros">
 				<tr>
 					<td></td>
@@ -50,8 +52,48 @@
 			</table>
 		</div>
 	</div>
-	<div data-role="page" id="settings"></div>
-	<div data-role="page" id="camping"></div>
+	<div data-role="page" id="settings">
+		<header>
+			<nav id="menu">
+				<ul>
+					<li><img src="css/images/logo.jpg" /></li><li><a href="#map"><img src="css/images/map.jpg" /></a></li><li><a href="#list"><img src="css/images/list.jpg" /></a></li><li><a href="#settings"><img src="css/images/settings.jpg" /></a></li>
+				</ul>
+			</nav>
+		</header>
+		<div data-role="content">
+			<div data-role="fieldcontain">
+				<label for="lang" class="select">Idioma</label> 
+				<select	name="lang" id="op_lang">
+					<option value="en">English</option>
+					<option value="es">Español</option>
+					<option value="it">Italiano</option>
+					<option value="fr">Français</option>
+					<option value="de">Deutsch</option>
+				</select>
+			</div>
+			<div data-role="fieldcontain">
+				<label for="radio" class="select">Radio</label>
+				<select name="radio" id="op_radio">
+					<option value="5000">5 Km</option>
+					<option value="10000">10 Km</option>
+					<option value="20000">20 Km</option>
+					<option value="50000">50 Km</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div data-role="page" id="camping">
+		<header>
+			<nav id="menu">
+				<ul>
+					<li><img src="css/images/logo.jpg" /></li><li><a href="#map"><img src="css/images/map.jpg" /></a></li><li><a href="#list"><img src="css/images/list.jpg" /></a></li><li><a href="#settings"><img src="css/images/settings.jpg" /></a></li>
+				</ul>
+			</nav>
+		</header>
+		<div data-role="content" id="camping_data">
+		
+		</div>
+	</div>
 	<script type="text/javascript" src="js/downloadxmlpost.js"></script>
 	<script type="text/javascript" src="js/getMap.js"></script>
 </body>

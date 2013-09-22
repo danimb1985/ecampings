@@ -5,6 +5,6 @@ var init = function() {
 };
 $(document).ready(function() {
 	$("#search_address").click(function() {
-		buscaGas($("#address").val(), 100000);
+		buscaGas($("#address").val(), 50000);
 	});
 });
