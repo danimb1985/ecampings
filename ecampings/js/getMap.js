@@ -7,25 +7,28 @@ var stepDisplay;
 var markerArray = [];
 var labelArray = [];
 var infowindow;
-var radio;
-
 var draw_circle = null;
-
+var myLocation;
+var zoom = {
+	50000 : 8,
+	20000 : 9,
+	10000 : 10,
+	5000 : 11
+};
 /* Función principal que se encarga de crear el mapa de Google */
 function initialize() {
-	var myLocation;
 	navigator.geolocation.getCurrentPosition(function(position) {
 		myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		var mapOptions = {
-			zoom : 7,
+			zoom : zoom[cnf['radio']],
 			mapTypeId : google.maps.MapTypeId.ROADMAP,
 			center : myLocation
 		};
 		map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-		buscaGasC(myLocation, cnf['radio']);
+		buscaGas('', myLocation, cnf['radio']);
 	}, function() {
 		var mapOptions = {
-			zoom : 7,
+			zoom : zoom[cnf['radio']],
 			mapTypeId : google.maps.MapTypeId.ROADMAP
 		};
 		map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
