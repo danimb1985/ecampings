@@ -16,33 +16,30 @@ function resultSQL(query, params) {
 		});
 	});
 }
-var config = database.transaction(function(t) {
+var cnf = [];
+database.transaction(function(t) {
 	t.executeSql("select * from config;", [], function(t, r) {
-		var conf = [];
 		for ( var i = 0; i < r.rows.length; i++) {
-			conf[r.rows.item(i).name] = r.rows.item(i).value;
+			cnf[r.rows.item(i).name] = r.rows.item(i).value;
 		}
-		return conf;
 	});
 });
-$(document).ready(function() {
-	/*
-	$("#op_radio option[value='" + window.config['radio'] + "']").attr("selected", "selected");
-	$("#op_lang option[value='" + window.config['lang'] + "']").attr("selected", "selected");
+$(document).on("pageinit", "#settings", function() {
+	$("#op_radio option[value='" + cnf['radio'] + "']").attr("selected", "selected");
+	$("#op_lang option[value='" + cnf['lang'] + "']").attr("selected", "selected");
 	$("#op_lang").selectmenu("refresh", true);
 	$("#op_radio").selectmenu("refresh", true);
-	*/
 	$("#op_lang").change(function() {
 		database.transaction(function(t) {
 			t.executeSql("update config set value = ? where name = 'lang';", [ $("#op_lang").val() ], function() {
-				window.config['lang'] = $("#op_lang").val();
+				cnf['lang'] = $("#op_lang").val();
 			});
 		});
 	});
 	$("#op_radio").change(function() {
 		database.transaction(function(t) {
 			t.executeSql("update config set value = ? where name = 'radio';", [ $("#op_radio").val() ]);
+			cnf['radio'] = $("#op_radio").val();
 		});
 	});
-
 });

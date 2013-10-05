@@ -4,7 +4,8 @@ var init = function() {
 	console.log("init() called");
 };
 $(document).ready(function() {
+	initialize();
 	$("#search_address").click(function() {
-		buscaGas($("#address").val(), 50000);
+		buscaGas($("#address").val(), '', cnf['radio']);
 	});
 });

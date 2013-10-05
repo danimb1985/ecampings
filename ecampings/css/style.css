@@ -55,3 +55,33 @@ body {
 .blue {
 	background: #3875D7;
 }
+
+#campings_list .ui-li-thumb {
+	left: auto !important;
+	right: 1px;
+	margin-top: 7px;
+}
+
+#campings_list .ui-li {
+	background: white;
+}
+
+#campings_list a {
+	padding-left: 15px !important;
+}
+
+#campings_list p {
+	color: #004f79;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#campings_list .distancia {
+	float: right;
+	color: #004f79;
+	font-size: 11px;
+}
+
+#datos_camping h1 {
+	font-size: 18px;
+}
