@@ -148,9 +148,7 @@ function carga_camping(id) {
 		param : new Array(cnf['lang'], id)
 	}, function(data) {
 		$("#datos_camping").html(data["html"]);
-		var lat = data["coordenadas"].substring(0, data["coordenadas"].indexOf(','));
-		var lng = data["coordenadas"].substring(data["coordenadas"].indexOf(',') + 1);
-		var coord = new google.maps.LatLng(lat, lng);
+		var coord = new google.maps.LatLng(43.6, -8.14);
 		var mapCampingOptions = {
 			zoom : 10,
 			mapTypeId : google.maps.MapTypeId.ROADMAP,
