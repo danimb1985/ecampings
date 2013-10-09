@@ -14,4 +14,5 @@ $(document).ready(function() {
 			buscaGas('', myLocation, cnf['radio']);
 		});
 	});
+	$("#address").attr("placeholder", lang["search"]);
 });

@@ -2,6 +2,6 @@
 #add
 #modify
 res/wgt/author-signature.xml
-res/wgt/css/style.css
-res/wgt/js/getMap.js
+res/wgt/index.html
+res/wgt/js/main.js
 res/wgt/signature1.xml

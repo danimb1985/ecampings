@@ -11,21 +11,26 @@ body {
 #menu ul li {
 	display: inline-block;
 	padding: 0;
-	margin: 0 0 0 1.25%;
-	width: 15.4%;
+}
+
+#menu ul {
+	background: #004f79;
+	height: 48px;
+	text-align: right;
 }
 
 #menu ul li:FIRST-OF-TYPE {
 	margin: 0;
-	width: 50%;
+	float: left;
 }
 
-#menu ul li img {
-	width: 100%;
+.ui-content {
+	clear: both;
 }
 
 #search {
 	margin-bottom: 15px;
+	text-align: center;
 }
 
 #search input {
@@ -36,12 +41,11 @@ body {
 	height: 30px;
 	border: 2px solid #ffcc00;
 	padding: 0 7px;
-	width: 67%;
+	width: 65%;
 }
 
 #search_address,#search_location {
-	width: 12.3%;
-	margin: 0 0 0 1.4%;
+	margin-left: 5px;
 }
 
 .icon {
@@ -85,19 +89,28 @@ body {
 #datos_camping h1 {
 	font-size: 18px;
 }
+
 #list-icon .icon {
 	margin-right: 5px;
 }
-#services{
+
+#services {
 	list-style: none;
 	margin: 10px 0 0 0;
 	padding: 0;
 }
+
 #services li {
 	margin-bottom: 5px;
 }
+
 #map_canvas_camping {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	height: 300px;
+}
+
+.select {
+	margin-bottom: 12px;
+	display: inline-block;
 }

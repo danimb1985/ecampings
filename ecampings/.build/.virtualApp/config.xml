@@ -5,9 +5,9 @@
     <access origin="http://google.com" subdomains="true"></access>
     <access origin="http://ecampings.d228.dinaserver.com" subdomains="true"></access>
     <access origin="192.168.0.10" subdomains="true"></access>
-    <access origin="http://192.168.0.26:50151" subdomains="true"/>
+    <access origin="http://192.168.0.26:52111" subdomains="true"/>
     <tizen:application id="4XHvpRE3rb.ecampings" package="4XHvpRE3rb" required_version="2.1"/>
-    <content src="http://192.168.0.26:50151/index.html"/>
+    <content src="http://192.168.0.26:52111/index.html"/>
     <icon src="icon.png"/>
     <name>ecampings</name>
 </widget>

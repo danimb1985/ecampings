@@ -1,15 +1,19 @@
+var cnf = [];
+var lang = [];
 database = openDatabase("ecampings", "1.0", "ecampings", 1024 * 1024);
 database.transaction(function(t) {
 	t.executeSql("CREATE TABLE IF NOT EXISTS config(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, value TEXT, UNIQUE (name));");
 	t.executeSql("INSERT INTO config (name,value) VALUES ('lang','es');");
 	t.executeSql("INSERT INTO config (name,value) VALUES ('radio','5000');");
 });
-var cnf = [];
 database.transaction(function(t) {
 	t.executeSql("select * from config;", [], function(t, r) {
 		for ( var i = 0; i < r.rows.length; i++) {
 			cnf[r.rows.item(i).name] = r.rows.item(i).value;
 		}
+		var script = document.createElement('script');
+		script.src = "js/lang_" + cnf['lang'] + ".js";
+		document.getElementsByTagName('script')[0].parentNode.appendChild(script);
 	});
 });
 $(document).on("pageinit", "#settings", function() {
@@ -21,6 +25,7 @@ $(document).on("pageinit", "#settings", function() {
 		database.transaction(function(t) {
 			t.executeSql("update config set value = ? where name = 'lang';", [ $("#op_lang").val() ], function() {
 				cnf['lang'] = $("#op_lang").val();
+				document.location.href = "index.html";
 			});
 		});
 	});
