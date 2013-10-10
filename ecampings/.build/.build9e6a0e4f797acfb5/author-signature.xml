@@ -120,7 +120,7 @@
 </Reference>
 <Reference URI="css/style.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>R3SpZfwTGq1gftT22ZYc1Di5gYmT7/EPY++1sX9QSp0=</DigestValue>
+<DigestValue>7qDjIiSkHH90l/0s4oWZRS2eNkeIwnA0WChzjSuSvz4=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -128,11 +128,11 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>OTsYPohZMzSjlewXOroq17k9tzeVb7eFA9FPZbMM0Hk=</DigestValue>
+<DigestValue>uhTzsWaN2nK9jsAxfy9wrJ9iAaBIxlYBhzQv6M84hLs=</DigestValue>
 </Reference>
 <Reference URI="js/db.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>hjsFiHTLsFQBN4oJRLlZjFsoMmK319DdEqesvR0OQ6I=</DigestValue>
+<DigestValue>Tgjns4e8qTHQ+ijQiR2/a66GwgirO9VDjrVsqmWB3ls=</DigestValue>
 </Reference>
 <Reference URI="js/downloadxmlpost.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -196,7 +196,7 @@
 </Reference>
 <Reference URI="js/main.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>RRfi41Wbv6eZOjIWhTKMQO5u6Ds/JljBJ10zfRC3FYQ=</DigestValue>
+<DigestValue>sGTAn7f5v6d7jFrj2fCMcPfX/w7okryKfRH40zXw0QY=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -207,9 +207,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-G138XIynWyQviE8azbEf7NX8bQGkyfaphD6eHhXc6RyDqLUk7NOn7/0TUYO4ElfoAUAU8zZjR+T0
-IfrhCiccSb6bMkF0gId4oaZXSHl+zcE+avOK+n3kpIRulN3L/+8bRiFH8oOgBSfvPppqX/263tLv
-Lq2Sbwkmgmsb47zQR1I=
+D5EdvdXl6QiXPXpewWWxfbUKRhiFmgaGd3kZ5bzpJzKpqMN8xQGPYbUD6xqlt6wisMmPEtFBxrfb
+Cl0nOTXneraJD6EyOcdEvFH/pgqtZyOzU1xCc2h2ASMnn61b2eRdwwTb+XddrVBN02CSGBU4MwIx
+/aM46obu1e6pxPrJqOk=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

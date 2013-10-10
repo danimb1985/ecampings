@@ -52,7 +52,7 @@ function buscaGas(ciudad, coordenadas, radio) {
 					centro = results[0].geometry.location;
 					crea_puntos(centro, radio);
 				} else {
-					alert("La poblacion indicada no puede ser localizada. Perdone por las molestias.");
+					alert(lang["not_found"]);
 				}
 			});
 		}
@@ -135,7 +135,7 @@ function DrawCircle(metros, center) {
 /* Encargada de crear la tabla con el listado de registros */
 function addNewRow(i, url, denominacion, cp, direccion, localidad, distance, id, adaptado_discapacitado, telefono) {
 
-	$('#campings_list').append("<li data-icon='false'>" + "<a href='#camping' onclick='carga_camping(" + id + ")'>" + "<img src='css/images/show_camping.jpg'/>" + "<h3>" + denominacion + "</h3>" + '<p onclick="document.location.href=\'tel:' + telefono + '\'">' + telefono + "</p>" + "<span class='distancia'>" + (distance.toFixed(0).replace(".", ",") / 1000).toFixed(1) + " Km<span>" + "</a>" + "</li>");
+	$('#campings_list').append("<li data-icon='false'>" + "<a href='#camping' onclick='carga_camping(" + id + ")'>" + "<img src='css/images/show_camping.jpg'/>" + "<h3>" + denominacion + "</h3>" + '<p onclick="document.location.href=\'tel:' + telefono + '\'">' + telefono + "</p>" + "<span class='distancia'>" + (distance.toFixed(0).replace(".", ",") / 1000).toFixed(1) + " " + lang["Km"] + "<span>" + "</a>" + "</li>");
 	try {
 		$('#campings_list').listview('refresh');
 	} catch (e) {

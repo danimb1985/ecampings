@@ -15,10 +15,4 @@ $(document).ready(function() {
 		});
 	});
 	$("#address").attr("placeholder", lang["search"]);
-	$("#op_radio option").each(function() {
-		$(this).html($(this).html() + lang['Km']);
-	});
-	$("#op_radio").selectmenu("refresh", true);
-	$("label[for='lang']").html(lang["language"]);
-	$("label[for='radio']").html(lang["radius"]);
 });

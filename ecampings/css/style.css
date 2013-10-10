@@ -17,6 +17,9 @@ body {
 	background: #004f79;
 	height: 48px;
 	text-align: right;
+	position: fixed;
+	z-index: 99;
+	width: 100%;
 }
 
 #menu ul li:FIRST-OF-TYPE {
@@ -26,6 +29,7 @@ body {
 
 .ui-content {
 	clear: both;
+	margin-top: 50px;
 }
 
 #search {

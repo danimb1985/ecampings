@@ -36,4 +36,10 @@ $(document).on("pageinit", "#settings", function() {
 			map.setZoom(zoom[cnf['radio']]);
 		});
 	});
+	$("#op_radio option").each(function() {
+		$(this).html($(this).html() + lang['Km']);
+	});
+	$("#op_radio").selectmenu("refresh", true);
+	$("label[for='lang']").html(lang["language"]);
+	$("label[for='radio']").html(lang["radius"]);
 });
